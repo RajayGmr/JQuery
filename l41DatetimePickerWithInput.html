@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../Project/assets/libs/jquery-ui-1.13.1/jquery-ui.min.css" type="text/css">
+    <style media="screen" type="text/css">
+      *{
+        box-sizing:border-box;
+        <!-- display:flex; -->
+        justify-content:center;
+        align-items:center;
+      }
+      .container{
+        width:900px;
+        background-color:#f4f4f4;
+        padding:20px;
+
+      }
+      .form-group{
+        margin: 10px 0;
+      }
+      .form-group label{
+        display: block;
+        font-size:20px;
+        margin-bottom:20px;
+      }
+      .form-control{
+        width:100%;
+        font-size:20px;
+        padding:5px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form class="" action="" method="">
+        <div class="form-group">
+          <label for="arrival">Arrival Date :</label>
+          <input type="date" name="arrival" value="" class="form-control" id="arrival" readonly>
+
+        </div>
+        <div class="form-group">
+          <label for="bookingstart">Booking Start Date :</label>
+          <input type="date" name="startarrival" value="" class="form-control" id="startbooking" readonly>
+
+        </div>
+        <div class="form-group">
+          <label for="bookingend">Booking End Date :</label>
+          <input type="date" name="endarrival" value="" class="form-control" id="endbooking" readonly>
+
+        </div>
+
+      </form>
+
+    </div>
+
+    <script type="text/javascript" src="../Project/assets/libs/jquery/jquery-min.js "></script>
+    <script  type="text/javascript" src="../Project/assets/libs/jquery-ui-1.13.1/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        console.log("hello");
+        $('#arrival').datepicker({
+          dateFormat:'dd-mm-yy',
+          numberOfMonths:2,
+          //numberOfMonths:[2,4]
+          //showAnim:"slideDown",
+        //  hideAnim:"slide",
+        showAnim: "slide",
+        //duration: 2000,
+        duration:"slow",
+        dayNamesMin:['Sun','Mon','Tue','Wed','Thu',"Fri","Sat"],
+        // changeMonth:true,
+        // changeYear:true,
+
+        // minDate:0,
+        // maxDate:5,
+        minDate:'07/02/2022',
+        maxDate:'07/09/2022'
+        });
+
+        $('#startbooking').datepicker({
+          numberOfMonths:1,
+          showAnim:'slide',
+          dateFormat:'yy-mm-dd',
+
+          onClose:function(selectdate){
+            $("#endbooking").datepicker("option","minDate",selectdate);
+          }
+        });
+        $('#endbooking').datepicker({
+          numberOfMonths:1,
+          showAnim:'slide',
+          dateFormat:'yy-mm-dd',
+
+          onClose:function(selectdate){
+            $("#startbooking").datepicker("option","maxDate",selectdate)
+          }
+        })
+      });
+
+    </script>
+
+  </body>
+</html>

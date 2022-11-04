@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen" type="text/css">
+      body{
+        height:100vh;
+        display:grid;
+        place-items:center;
+      }
+      .container{
+        width:900px;
+        background-color:#f4f4f4;
+        padding:20px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="">
+        <h3>Student Data</h3>
+      </div>
+      <ul>
+        <li>Name : <span>???</span> </li>
+        <li>Age : <span>???</span> </li>
+        <li>Phone : <span>???</span> </li>
+      </ul>
+      <div class="">
+        <button type="button" name="button" class="newcaption-btn">New Caption</button>
+        <button type="button" name="button" class="removecaption-btn">Remove Caption</button>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="../Project/assets/libs/jquery/jquery-min.js "></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $(".newcaption-btn").click(function(){
+          var setnewcap=$("div").data("newcaption","Customers Info");
+          var getnewcap=$("div").data("newcaption");
+          //alert(getnewcap);
+          $("h3").text(getnewcap);
+        });
+        $(".removecaption-btn").click(function(){
+          alert("Before removeData = ",$("div").data("newcaption"));
+        })
+      })
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Each</title>
+    <style media="screen" type="text/css">
+      body{
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <ul class="colors">
+        <li title="redcolor">Red</li>
+        <li title="greencolor">Green</li>
+        <li title="bluecolor">Blue</li>
+      </ul>
+      <button type="button" name="button" id="btn">Show single color</button>
+
+    </div>
+
+    <script type="text/javascript" src="../Project/assets/libs/jquery/jquery-min.js "></script>
+    <script type="text/javascript">
+      $('document').ready(function(){
+        //alert("hi")
+        $("#btn").click(function(){
+          // $("ul").children().each(function(idx){
+          //   //alert(idx);
+          //   console.log($(this).text());
+          // });
+
+          $(".colors li").each(function(idx){
+            var getindex=$(this).index();
+            var gettext=$(this).text();
+            var gettitle=$(this).attr('title');
+            console.log(getindex);
+            console.log(gettext);
+            console.log(gettitle);
+
+
+          })
+        })
+      })
+    </script>
+
+  </body>
+</html>

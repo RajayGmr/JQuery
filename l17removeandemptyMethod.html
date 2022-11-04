@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Remove and Empty Method</title>
+  </head>
+  <body>
+
+    <div class="">
+      <h1>Hello Heading Tag H1</h1>
+      <h2>Hello Heading Tag H2</h2>
+      <h3>Hello Heading Tag H3</h3>
+      <h2>Hello Heading Tag H2</h2>
+      <h1>Hello Heading Tag H1</h1>
+      <span>Hello i am span Tag</span>
+    </div>
+    <button type="button" name="button" id="removebtn">Remove</button>
+    <button type="button" name="button" id="emptybtn">Empty</button>
+    <button type="button" name="button" id="detbtn">Detach</button>
+    <button type="button" name="button" id="addbtn">Add</button>
+
+    <script type="text/javascript" src="../Project/assets/libs/jquery/jquery-min.js "></script>
+    <script type="text/javascript">
+
+    $(document).ready(function(){
+      console.log("hi");
+      //remove
+      $("#removebtn").click(function(){
+        $("h2").remove();
+      });
+      //Empty
+      $("#emptybtn").click(function(){
+        $("div").empty();
+      });
+      //detach
+      $("#detbtn").click(function(){
+        $('div').detach();
+      });
+      //add
+      $("#addbtn").click(function(){
+        $("h1,h2,span").css({
+          "background-color": "yellow",
+          "border":"3px dashed red"
+        })
+      });
+    })
+
+    </script>
+  </body>
+</html>

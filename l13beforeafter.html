@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Before And After</title>
+  </head>
+  <body>
+    <h1>Hello Myanmar</h1>
+    <button type="button" name="button" id="before">Before Insert</button>
+    <button type="button" name="button" id="after">After Insert</button>
+
+    <script type="text/javascript" src="../Project/assets/libs/jquery/jquery-min.js "></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        console.log("hi");
+
+        $("#before").click(function(){
+          $("h1").before("Save Myanmar");
+        });
+
+        $("#after").click(function(){
+          $("h1").after("<p>Myanmar is in Danger</p>")
+        });
+      })
+
+    </script>
+
+  </body>
+</html>

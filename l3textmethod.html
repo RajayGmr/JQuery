@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Text Method</title>
+  </head>
+  <body>
+    <h1>This is awesome <u>JS Library</u></h1>
+    <h1>Save Myanamr <u>Reject MLA</u></h1>
+    <h1>Pray Mayanmar</h1>
+    <hr>
+    <h2>This is awesome <u>JS Library</u></h2>
+    <h2>Save Myanamr <u>Reject MLA</u></h2>
+    <h2>Pray Mayanmar</h2>
+    <hr>
+    <h3>This is awesome <u>JS Library</u></h3>
+    <h3>Save Myanamr <u>Reject MLA</u></h3>
+    <h3>Pray Mayanmar</h3>
+    <hr>
+    <h4>This is awesome <u>JS Library</u></h4>
+    <h4>Save Myanamr <u>Reject MLA</u></h4>
+    <h4>Pray Mayanmar</h4>
+
+      <script type="text/javascript" src="../Project/assets/libs/jquery/jquery-min.js"></script>
+      <script type="text/javascript">
+      // html to text()
+      //console.log('Hey');
+
+      $(document).ready(function(){
+        //console.log("HELLO");
+
+      //  console.log($('h1').html("hahaha"));
+      var getfirst1=$('h1:first').html();
+      $("h1:last").html(getfirst1);
+    });
+
+    //Text to text
+    $(document).ready(function(){
+      console.log($('h2').html());
+      console.log($('h2').text());
+
+      const get=$("h2:first").text();
+      $("h2:last").text(get);
+
+    });
+
+    //html to Text
+    $(document).ready(function(){
+      let getfirst3=$('h3:first').html();
+      $("h3:last").text(getfirst3);
+    });
+
+    //text to html
+    $(document).ready(function(){
+      var getfirst4=$("h4:first").text();
+      //console.log(getfirst4);
+      $("h4:last").html(getfirst4);
+    });
+
+      </script>
+
+  </body>
+</html>

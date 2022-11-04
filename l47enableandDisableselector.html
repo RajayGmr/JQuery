@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Enable and Disable Selector</title>
+    <style media="screen" type="text/css">
+      *{
+        box-sizing:border-box;
+      }
+      body{
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+      }
+      .container{
+        width:900px;
+        background-color:#f4f4f4;
+
+      }
+      form{
+        padding:20px;
+      }
+      .form-group{
+        margin:10px 0;
+      }
+      .form-group label{
+        display:block;
+        margin-bottom:5px;
+      }
+      .form-control{
+        width:100%;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form class="" action="" method="">
+        <div class="form-group">
+          <label for="firstname">First Name</label>
+          <input type="text" name="" value="" id="firstname" class="form-control" autocomplete="off">
+
+        </div>
+        <div class="form-group">
+          <label for="lastname">Last Name</label>
+          <input type="text" name="" value="" id="lastname" class="form-control" autocomplete="off">
+
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" name="" value="" id="email" class="form-control" autocomplete="off">
+
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" name="" value="" id="password" class="form-control" autocomplete="off">
+
+        </div>
+        <input type="submit" name="" value="Disable" class="btn disabled">
+        <button type="submit" name="button" class="btn enabled">Enabled</button>
+
+      </form>
+
+    </div>
+
+    <script type="text/javascript" src="../Project/assets/libs/jquery/jquery-min.js "></script>
+    <script type="text/javascript">
+      //alert("helo");
+
+      //:disbled
+      $('.disabled').click(function(e){
+        $(":disabled").css({
+          "background-color":"yellow",
+          "border":"1px dashed red"
+        });
+        e.preventDefault();
+      });
+      //:enable
+      $('.enabled').click(function(e){
+        // $(":enabled").css({
+        //   "background-color":"orange",
+        //   "border":"1px dashed red"
+        // });
+        // e.preventDefault();
+        $(":enabled:not(.btn)").css({
+          "background-color":"violet",
+          "border":"1px dashed red"
+        });
+        e.preventDefault();
+      })
+    </script>
+
+  </body>
+</html>

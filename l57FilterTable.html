@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Filter Table</title>
+    <style media="screen" type="text/css">
+      *{
+        box-sizing:border-box;
+      }
+      body{
+        height:100vh;
+        display:flex;
+        justify-content:center;
+
+      }
+      .container{
+        width:700px;
+      }
+      .form-control{
+        width:100%;
+        font-size:16px;
+        border: 1px solid #ddd;
+        padding:12px 20px 12px 40px;
+        margin-bottom:15px;
+      }
+      .form-control:focus{
+        outline:none;
+      }
+      #datatable{
+        width:100%;
+        border:1px solid #ccc;
+        border-collapse:collapse;
+      }
+      #datatable .header,#datatable tr:hover{
+        background-color:#f4f4f4;
+      }
+      #datatable .header{
+        background-color:#f4f4f4;
+      }
+      #datatable tr{
+        border-bottom:1px solid #cdcdcd;
+      }
+      #datatable th,#datatable td{
+        text-align:left;
+        padding:10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Customers List</h2>
+      <input type="text" name="search" value="" class="form-control" id="search" placeholder="Search for something">
+      <table id=datatable>
+        <thead class="header">
+          <th style="width:60%">Name</th>
+          <th style="width:60%">Age</th>
+          <th style="width:60%">City</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Aung Aung</td>
+            <td>20</td>
+            <td>Yangon</td>
+          </tr>
+          <tr>
+            <td>Mg Mg</td>
+            <td>25</td>
+            <td>Mandalay</td>
+          </tr>
+          <tr>
+            <td>Su Su</td>
+            <td>20</td>
+            <td>Bago</td>
+          </tr>
+          <tr>
+            <td>Maung Maung</td>
+            <td>30</td>
+            <td>Mawlamyine</td>
+          </tr>
+          <tr>
+            <td>Hla Hla</td>
+            <td>21</td>
+            <td>Mawlamyine</td>
+          </tr>
+          <tr>
+            <td>Yu Yu</td>
+            <td>23</td>
+            <td>NaypyiDaw</td>
+          </tr>
+          <tr>
+            <td>Zaw Zaw</td>
+            <td>22</td>
+            <td>Bago</td>
+          </tr>
+          <tr>
+            <td>Yin Yin</td>
+            <td>15</td>
+            <td>Mandalay</td>
+          </tr>
+          <tr>
+            <td>Aung Aung</td>
+            <td>20</td>
+            <td>Yangon</td>
+          </tr>
+          <tr>
+            <td>Mg Mg</td>
+            <td>25</td>
+            <td>Mandalay</td>
+          </tr>
+          <tr>
+            <td>Su Su</td>
+            <td>20</td>
+            <td>Bago</td>
+          </tr>
+          <tr>
+            <td>Maung Maung</td>
+            <td>30</td>
+            <td>Mawlamyine</td>
+          </tr>
+          <tr>
+            <td>Hla Hla</td>
+            <td>21</td>
+            <td>Mawlamyine</td>
+          </tr>
+          <tr>
+            <td>Yu Yu</td>
+            <td>23</td>
+            <td>NaypyiDaw</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+
+    <script type="text/javascript" src="../Project/assets/libs/jquery/jquery-min.js "></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        //alert("Hi");
+        $('#search').keyup(function(){
+          //alert("Hi");
+          var getinput=$(this).val().toLowerCase();
+          //alert(getinput);
+
+          //filter for all columns method A
+          // $('#datatable tr').filter(function(){
+          //   $(this).toggle($(this).text().toLowerCase().indexOf(getinput)>-1);
+          // });
+
+          //filter for all columns method B
+          // $('#datatable tr').filter(function(){
+          //   if($(this).text().toLowerCase().indexOf(getinput>-1){
+          //     $(this).show();
+          //   }else{
+          //     $(this).hide();
+          //   }
+          // });
+
+          //filter for all columns method c
+          // $('#datatable tr').filter(function(){
+          //   if($(this).text().toLowerCase().indexOf(getinput>-1){
+          //     $(this).css({
+          //       display:""
+          //     })
+          //   }else{
+          //     $(this).css({
+          //       display:"none";
+          //     })
+          //   }
+          // })
+
+
+          //filter for first column A
+          $("#datatable tr").filter(function(){
+            $(this).toggle($(this).text().toLowerCase().indexOf>-1);
+          })
+        })
+
+
+      })
+    </script>
+  </body>
+</html>

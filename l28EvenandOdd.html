@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Even and Odd Method</title>
+    <style media="screen" type="text/css">
+      body{
+        height:100vh;
+        display: flex;
+        justify-content:center;
+        align-items:center;
+        flex-direction: column;
+
+      }
+      .container{
+        width:1000px;
+        background-color:#f4f4f4;
+        padding:20px;
+
+        display:flex;
+      }
+      .box{
+        width:150px;
+        height:300px;
+        margin 0 20px;
+      }
+      .box1{
+        background-color:green;
+      }
+      .box2{
+        background-color:orange;
+      }
+      .box3{
+        background-color:red;
+      }
+      .box4{
+        background-color:yellow;
+      }
+      .box5{
+        background-color:blue;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box box1">DIV 1</div><hr>
+      <div class="box box2">DIV 2</div><hr>
+      <div class="box box3">DIV 3</div><hr>
+      <div class="box box4">DIV 4</div><hr>
+      <div class="box box5">DIV 5</div><hr>
+
+    </div>
+    <div class="">
+      <button type="button" name="button" id="evenbtn">Even Button</button>
+      <button type="button" name="button" id="oddbtn">Odd Button</button>
+      <button type="button" name="button" id="slibtn">Slice Button</button>
+    </div>
+
+
+    <script type="text/javascript" src="../Project/assets/libs/jquery/jquery-min.js "></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        console.log("hi");
+        //even
+        $("#evenbtn").click(function(){
+          $(".box").even().css("background-color","black");
+        });
+
+        //odd
+        $("#oddbtn").click(function(){
+          $(".box").odd().css("background-color","pink");
+        });
+
+        //slice(start,stop)
+        $("#slibtn").click(function(){
+          // $(".box").slice(1,3).css({
+          //   "background-color":"steelblue",
+          //   "color":"#f4f4f4"
+          // });
+          // $(".box").slice(0,3).css({
+          //   "background-color":"steelblue",
+          //   "color":"#f4f4f4"
+          // });
+          $(".box").slice(-3,-1).css({
+            "background-color":"steelblue",
+            "color":"#f4f4f4"
+          })
+        })
+
+      })
+    </script>
+
+  </body>
+</html>

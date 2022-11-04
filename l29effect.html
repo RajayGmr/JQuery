@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Effects Mehtod</title>
+    <style media="screen" type="text/css">
+      body{
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        flex-direction:column;
+      }
+      .container{
+        width:900px;
+        background-color:#f4f4f4;
+        padding:20px;
+        display:flex;
+      }
+      .box{
+        width:150px;
+        height:300px;
+        margin:0 10px;
+      }
+      .box1{
+        background-color:green;
+      }
+      .box2{
+        background-color:orange;
+      }
+      .box3{
+        background-color:red;
+      }
+      .box4{
+        background-color:yellow;
+      }
+      .box5{
+        background-color:blue;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box box1">1</div>
+      <div class="box box2">2</div>
+      <div class="box box3">3</div>
+      <div class="box box4">4</div>
+      <div class="box box5">5</div>
+
+    </div>
+    <div class="control">
+      <button type="button" name="button" id="hidebtn">Hide Button</button>
+      <button type="button" name="button" id="showbtn">show Button</button>
+      <button type="button" name="button" id="tgbtn">Toggle Button</button>
+      <button type="button" name="button" id="fadebtn">fadeOut Button</button>
+      <button type="button" name="button" id="fInbtn">fadeIn Button</button>
+      <button type="button" name="button" id="ftgbtn">fadeToggle Button</button>
+      <button type="button" name="button" id="ftobtn">fadeTo Button</button>
+      <button type="button" name="button" id="subtn">slideUp Button</button>
+      <button type="button" name="button" id="sdbtn">slideDown Button</button>
+      <button type="button" name="button" id="stbtn">SlideToggle Button</button>
+      <button type="button" name="button" id="anibtn">Animate Button</button>
+      <button type="button" name="button" id="debtn">Delay Button</button>
+
+      <button type="button" name="button" id="clickbtn">ClickMe Button</button>
+      <button type="button" name="button" id="stopbtn">Stop Button</button>
+      <button type="button" name="button" id="stopTruebtn">stop(true) Button</button>
+      <button type="button" name="button" id="Finishbtn">Finish Button</button>
+
+      <button type="button" name="button" id="btn">dequeue Button</button>
+      <button type="button" name="button" id="btn1">clearQueue Button</button>
+    </div>
+
+    <script type="text/javascript" src="../Project/assets/libs/jquery/jquery-min.js "></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        console.log("hi");
+        //(i)displace Effects
+        //hide
+        // $(selector).hide()
+        // $(selector).hide(speed)
+        // $(selector).hide(speed, callback)
+        $("#hidebtn").click(function(){
+          // $('.box1,.box2').hide();
+          //$('.box').even().hide();
+          //$('.box').odd().hide();
+
+          //$(".box1").hide(1000);
+          //$(".box1").hide("slow");
+
+          $(".box1").hide(1000,function(){
+            $(".box2,.box3").hide(1500,function(){
+              $(".box4,.box5").hide(2000);
+            });
+          })
+        })
+        $("#showbtn").click(function(){
+          // $('.box1,.box2').hide();
+          //$('.box').even().hide();
+          //$('.box').odd().hide();
+
+          //$(".box1").hide(1000);
+          //$(".box1").hide("slow");
+
+          $(".box1").show(1000,function(){
+            $(".box2,.box3").show(1500,function(){
+              $(".box4,.box5").show(2000);
+            });
+          })
+        })
+        //toggle
+        $("#tgbtn").click(function(){
+          // $('.box1,.box2').hide();
+          //$('.box').even().hide();
+          //$('.box').odd().hide();
+
+          //$(".box1").hide(1000);
+          //$(".box1").hide("slow");
+
+          $(".box1").toggle(1000,function(){
+            $(".box2,.box3").toggle(1000,function(){
+              $(".box4,.box5").toggle(1000);
+            });
+          })
+        });
+
+        //--------------------------------------------------------------------
+        //fade
+        $("#fadebtn").click(function(){
+          $(".box1").fadeOut(1000,function(){
+            $(".box2").fadeOut(1500);
+          });
+        });
+        $("#fInbtn").click(function(){
+          $(".box1").fadeIn(1000,function(){
+            $(".box2").fadeIn(1000);
+          })
+        });
+        $("#ftgbtn").click(function(){
+          $(".box1").fadeToggle(1000,function(){
+            $(".box2").fadeToggle(1500);
+          });
+        });
+
+        //fadeTo
+        $("#ftobtn").click(function(){
+          $(".box1").fadeTo(1000,0.5,function(){
+            $('.box2').fadeTo("slow",0.5);
+          });
+        })
+
+        //--------------------------------------------------------------------
+        //slideUp
+        $("#subtn").click(function(){
+          // $('.box1,.box2').hide();
+          //$('.box').even().hide();
+          //$('.box').odd().hide();
+
+          //$(".box1").hide(1000);
+          //$(".box1").hide("slow");
+
+          $(".box1").slideUp(1000,function(){
+            $(".box2,.box3").slideUp(1500,function(){
+              $(".box4,.box5").slideUp(2000);
+            });
+          })
+        })
+        //slideDown
+        $("#sdbtn").click(function(){
+          // $('.box1,.box2').hide();
+          //$('.box').even().hide();
+          //$('.box').odd().hide();
+
+          //$(".box1").hide(1000);
+          //$(".box1").hide("slow");
+
+          $(".box1").slideDown(1000,function(){
+            $(".box2,.box3").slideDown(1500,function(){
+              $(".box4,.box5").slideDown(2000);
+            });
+          });
+        })
+        $("#stbtn").click(function(){
+          // $('.box1,.box2').hide();
+          //$('.box').even().hide();
+          //$('.box').odd().hide();
+
+          //$(".box1").hide(1000);
+          //$(".box1").hide("slow");
+
+          $(".box1").slideToggle(1000,function(){
+            $(".box2,.box3").slideToggle(1500,function(){
+              $(".box4,.box5").slideToggle(2000);
+            });
+          });
+          //slideToggle
+
+        })
+        //----------------------------------------------------------------
+        //animate
+        //$(selector).animate({params})
+        //$(selector).animate({params},speed)
+        //$(selector).animate({params},speed,callback);
+        $("#anibtn").click(function(){
+          // $('.box1').animate({"height":"50%"});
+          // $('.box1,.box2').animate({"height":"50%"});
+
+          // $('.box1').animate({"height":"50%"},1000);
+          // $('.box1,.box2').animate({"height":"50%"},1000);
+          $('.box1').animate({"height":"50%"},1000,function(){
+            $('.box1,.box2').animate({"height":"50%"},1500);
+          });
+
+        })
+
+        //delay & queue
+        $('#debtn').click(function(){
+          // $('.box1').delay('slow').fadeOut();
+          // $('.box1').delay('slow').slideUp();
+
+          var b1=$(".box1");
+          b1.animate({"height":100},'slow');
+          b1.animate({"height":200},'slow');
+          b1.animate({"height":300},'slow');
+          b1.animate({"height":400},'slow');
+          b1.animate({"height":250},'slow');
+          console.log(b1.queue());
+          console.log(b1.queue().length);
+
+        });
+
+        $("#clickbtn").click(function(){
+          $(".box1").html("<i>I am ready to start</i>").animate({"width":500},2000);
+          $(".box1").html("<i>Did you click stop button</i>").animate({'width':100},2000);
+        });
+
+        //stop()& stop(true)
+        $('#stopbtn').click(function(){
+          $('.box1').stop();
+        });
+        $('#stopTruebtn').click(function(){
+          $('.box1').stop(true);
+        });
+
+        //finish
+        $('#Finishbtn').click(function(){
+          $('.box1').finish();
+        });
+
+        //dequeue
+        $("#btn").click(function(){
+          var div5=$(".box5");
+          // div5.animate({width:300,height:300},"slow");
+          // div5.animate({width:300,height:200},"slow");
+
+          // div5.animate({width:300,height:300},"slow");
+          // div5.animate({width:300,height:200},"slow");
+          // div5.css('background-color',"steelblue");
+
+          // div5.animate({width:300,height:300},"slow");
+          // div5.animate({width:300,height:200},"slow");
+          // div5.queue(function(){
+          //   div5.css('background-color','steelblue');
+          // });
+
+          div5.animate({width:300,height:300},"slow");
+          div5.animate({width:300,height:200},"slow");
+          div5.queue(function(){
+            div5.css('background-color','steelblue');
+            div5.dequeue();
+          });
+          div5.slideUp("slow");
+          div5.slideDown("slow");
+          console.log("Total Queue := " , div5.queue().length);
+        })
+
+        //clearQueue
+        $("#btn1").click(function(){
+        //   $('.box5').clearQueue();
+           $(".box1").clearQueue();
+        })
+
+      })
+
+    </script>
+
+  </body>
+</html>
+
+<!-- Jquery Effects
+(i) display Effects =hide(), show(), toggle(),
+(ii) fading Effects = fadeIn(), fadeOut(), fadeToggle()/ fadeTo()
+(iii)sliding Effects = slideDown(), slideUp(), SlideToggle()
+(iv) Other Effects = animate(), delay(), stop(), finish(), queue(), dequeue(), clearQueue() -->

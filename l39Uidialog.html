@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../Project/assets/libs/jquery-ui-1.13.1/jquery-ui.min.css" type="text/css">
+    <style media="screen" type="text/css">
+
+    </style>
+  </head>
+  <body>
+    <div class="dbox" title="How to use UI?">
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing</p>
+
+    </div>
+    <button type="button" name="button" class="btn">Click Me</button>
+    <button type="button" name="button" class="btn1">Toggle Button</button>
+
+    <script type="text/javascript" src="../Project/assets/libs/jquery/jquery-min.js "></script>
+    <script  type="text/javascript" src="../Project/assets/libs/jquery-ui-1.13.1/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+      console.log("Hi");
+      $(".dbox").dialog({
+        autoOpen:false,
+        width:450,
+        height:250,
+        title:'Are you ready to use JQ UI',
+        hide:'slideUp',  //slide slideUp
+        show:"slideDown",  //slider slideDown
+        position:{
+          //at:"left",
+          //at:"left top",
+          //at:"left bottom",
+          //at:"right",
+          //at:"right top",
+          //at:"right bottom",
+          //at:"top",
+          //at:"bottom"
+        }
+
+      }).css({
+        "background-color":"grey",
+        "color":"white"
+      });
+      //for box
+      $(".dbox").parent().css("background-color","orange");
+
+      //for title
+      $(".dbox").siblings("div:first").css("background-color","skyblue");
+
+      //for button
+      $(".dbox").siblings("div:nth-of-type(1)").find("button").css("background-color","red");
+
+      //For click me button
+      // $(".btn").click(function(){
+      //   $(".dbox").dialog({
+      //     autoOpen:true
+      //   });
+      // });
+
+      $(".btn").click(function(){
+        $(".dbox").dialog('open');
+      });
+
+      $(".btn1").click(function(){
+        $(".dbox").dialog("isOpen") ===true? $(".dbox").dialog("close") : $(".dbox").dialog("open");
+      })
+    </script>
+  </body>
+</html>

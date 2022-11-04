@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Trim Method</title>
+  </head>
+  <body>
+
+    <script type="text/javascript" src="../Project/assets/libs/jquery/jquery-min.js "></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        var something="\n\n           Welcome to JQuery Lesson    \n\n";
+        console.log("Before Trim = "+something);
+
+       //method 1
+        something=jQuery.trim(something);
+        console.log("After Trim ="+something);
+
+        //method 2
+         something=$.trim(something);
+         console.log("After Trim ="+something);
+
+      })
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Mouse Event</title>
+    <style media="screen" type="text/css">
+      body{
+        height: center;
+        display:flex;
+        justify-content:center;
+      }
+      .container{
+        width:500px;
+        background: #f4f4f4;
+        box-shadow: 5px 10px 10px rgba(0,0,0,0.5);
+        padding:20px;
+      }
+      .box{
+        width:300px;
+        height:300px;
+        background:green;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+
+      </div>
+
+    </div>
+
+    <script type="text/javascript" src="../Project/assets/libs/jquery/jquery-min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        console.log("Hey");
+
+        //mouseenter
+        // $('.container').mouseenter(function(){
+        //   console.log("I am mouseenter");
+        // });
+
+        //mouseover(inc child elements)
+        $('.container').mouseover(function(){
+          console.log("I am mouseover");
+        });
+
+        //mouseleave
+        // $('.container').mouseleave(function(){
+        //   console.log("I am mouseleave");
+        // });
+
+        //mouseout(inc child elements)
+        $('.container').mouseout(function(){
+          console.log("I am mouseout");
+        });
+
+        //hover(in,out)
+        $('.box').hover(function(){
+          //for in
+          $(this).css("background-color","violet");
+        }, function(){
+          //for out
+          $(this).css("background-color","blue");
+        });
+
+        $('.container').hover(function(){
+          $(this).css("background-color","red");
+        },function(){
+          $(this).css("background-color","deeppink");
+        });
+
+        //mousedown
+        $('.box').mousedown(function(){
+          console.log("I am mousedown");
+          $(this).css("background-color","orange");
+        });
+        //mouseup
+        $('.box').mouseup(function(){
+          console.log("I am mouseup");
+          $(this).css("background-color","yellow");
+        })
+
+      })
+
+    </script>
+
+  </body>
+</html>

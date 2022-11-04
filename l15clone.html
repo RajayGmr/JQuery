@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Clone Method</title>
+  </head>
+  <style media="screen" type="text/css">
+    h1{
+      color: red;
+    }
+  </style>
+  <body>
+    <h1 class="display-1">Hello Thailand</h1>
+    <div class="container">
+
+    </div>
+    <button type="button" name="button">Clone</button>
+
+    <script type="text/javascript" src="../Project/assets/libs/jquery/jquery-min.js "></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        console.log("hello");
+
+        $("button").click(function(){
+          // $("h1").clone().appendTo("body");
+             $("h1").clone().appendTo(".container");
+
+        })
+      })
+    </script>
+
+  </body>
+</html>

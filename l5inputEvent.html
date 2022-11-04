@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Input Event</title>
+    <style media="screen" type="text/css">
+      body{
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+      }
+      .container{
+        width:500px;
+        background:grey;
+        padding:20px;
+      }
+      .form-group{
+        margin:20px 0;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form class="" action="" method="">
+        <div class="form-group">
+          <label for="firstname">First Name</label>
+          <input type="text" name="firstname" id="firstname" value="" class="form-control" autocomplete="off">
+        </div>
+
+        <div class="form-group">
+          <label for="lastname">Last Name</label>
+          <input type="text" name="lastname" id="lastname" value="" class="form-control" autocomplete="off">
+        </div>
+
+        <div class="form-group">
+          <label for="country">Country</label>
+          <select class="form-control" name="country" id="country">
+            <option value="">Choose Country</option>
+            <option value="mmr">Myanamr</option>
+            <option value="th">Thailand</option>
+            <option value="ind">India</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input type="text" name="age" id="age" value="" class="form-control" autocomplete="off">
+        </div>
+
+        <div class="form-group">
+          <label for="ph">Phone No.</label>
+          <input type="text" name="phone" id="ph" value="" class="form-control" autocomplete="off">
+        </div>
+
+        <div class="form-group">
+          <label for="nrc">NRC</label>
+          <input type="text" name="nrc" value="" id="nrc" class="form-control" autocomplete="off">
+        </div>
+        <button type="submit" name="button">Submit</button>
+
+      </form>
+
+    </div>
+
+
+        <script type="text/javascript" src="../Project/assets/libs/jquery/jquery-min.js"></script>
+        <script type="text/javascript">
+          console.log("hey");
+
+          $(document).ready(function(){
+          //  console.log("hello");
+
+          // //blur()
+          $('#firstname').blur(function(){
+            console.log("I am working with blur");
+          });
+          //
+          // //change
+          $('#lastname').change(function(){
+            console.log("I am working with change");
+          });
+          //
+          // //focus   focusin focusout
+          $("#nrc").focus(function(){
+            console.log("I am working with focus");
+          });
+
+          //select()
+          $('input').select(function(){
+            console.log("i am select");
+          })
+
+          //chamge()
+          $("select").change(function(){
+            console.log("I am working in sleection");
+          });
+
+          //keydown()   keypress()
+          var q=0;
+          $("#age").keydown(function(){
+            console.log("i am keydown");
+            console.log(q++);
+          });
+
+          //keyup()
+          $("#ph").keyup(function(){
+            console.log("I am keypup");
+          });
+
+          $("form").submit(function(e){
+            console.log("submitted to DB");
+            e.preventDefault();
+          });
+
+          });
+
+        </script>
+
+  </body>
+</html>

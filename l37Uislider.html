@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ui Slider</title>
+    <link rel="stylesheet" href="../Project/assets/libs/jquery-ui-1.13.1/jquery-ui.min.css" type="text/css">
+    <style media="screen" type="text/css">
+      *{
+
+      }
+      body{
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+      }
+      .container{
+        width:900px;
+        background-color:#f4f4f4;
+        padding:20px;
+      }
+      .form-group{
+        margin:10px 0px;
+      }
+      .form-group label{
+        display:block;
+        font-size:20px;
+        margin-bottom:20px;
+      }
+      .form-control{
+        width:100%;
+        font-size:20px;
+        padding:5px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form class="" action="" method="">
+        <div class="form-group">
+          <label for="">Loan $ :</label>
+          <input type="text" name="loan" value="" id="loan" class="form-control" readonly>
+
+        </div>
+        <div class="form-group">
+          <label for="myslider"></label>
+          <div class="" id="myslider">
+
+          </div>
+          <div class="form-group">
+            <label for="days">Day :</label>
+            <input type="text" name="days" value="" id="days" class="form-control" readonly>
+
+          </div>
+        <div class="form-group">
+          <label for="term">Term</label>
+          <div class="" id="term">
+
+          </div>
+
+        </div>
+
+      </form>
+
+    </div>
+
+    <script type="text/javascript" src="../Project/assets/libs/jquery/jquery-min.js "></script>
+    <script  type="text/javascript" src="../Project/assets/libs/jquery-ui-1.13.1/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        console.log("hello");
+        $('#myslider').slider({
+          slide:function(e,ui){
+          //  console.log(e.target);
+          //  console.log(ui.value);
+            $('#loan').val(ui.value)
+          },
+          min:10,
+          max:200,
+          value:40,
+          step:10,
+          orientation:"vertical",
+
+          change:function(e,jqui){
+            console.log('this is change=',jqui.value);
+          },
+          start:function(e,startui){
+            console.log('this is start=',startui.value);
+          },
+          stop:function(e,stopui){
+            console.log('This is stop=',stopui.value);
+          }
+        }).css("background-color","steelblue");
+        // $('#myslider > span').css({
+        //   "background-color":"yellow"
+        // });
+        $("#myslider").children("span").css("background-color","violet");
+
+        $('#term').css("background-color","steelblue").slider({
+          slide:function(e,jqui){
+            console.log(jqui.value);
+            $('#days').val("From "+jqui.values[0]+ " To "+jqui.values[1]+" Days");
+          },
+          min:7,
+          max:30,
+          step:1,
+          values:[7,10],
+          range:true
+
+        });
+        $('#term').children("span:nth-of-type(1)").css("background-color","yellow");
+        $('#term').children("span:nth-of-type(2)").css("background-color","violet");
+        $('#term>div').css("background-color","skyblue");
+      });
+
+    </script>
+
+  </body>
+</html>

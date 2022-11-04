@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>:empty & :not() Selector</title>
+    <style media="screen" type="text/css">
+      body{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+      }
+      /* .box{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 100vh;
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>My Fav colors</h1>
+      <ul>
+        <li>Red</li>
+        <li>Green</li>
+        <li>Blue</li>
+        <li></li>
+        <li>Pink</li>
+        <li>white</li>
+        <li></li>
+        <li>Orange</li>
+      </ul>
+      <hr>
+      <h1>My Fav Fruit</h1>
+      <ol>
+        <li>Apple</li>
+        <li>Orange</li>
+        <li>Grape</li>
+        <li></li>
+        <li>peach</li>
+        <li>mango</li>
+        <li></li>
+        <li></li>
+      </ol>
+
+    </div>
+
+<div class="box">
+  <p class=""></p>
+  <p>Hello i am P tag. inside of div</p>
+  <p></p>
+
+</div>
+    <script type="text/javascript" src="../Project/assets/libs/jquery/jquery-min.js "></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        console.log("hi");
+
+        //:empty
+        //$(":empty").css("background-color","steelblue");
+
+        //$("ol li:empty").css("background-color","steelblue");
+        //$("p:empty").css("background-color","orange");
+
+        //:not()
+        // $("li:not(ol li)").css("background-color","violet");
+        // $("li:not(ul li)").css("background-color","pink");
+
+        //$("li:not(ul li:empty)").css("background-color","pink")
+        $("li:not(:empty)").css("background-color","orange");
+      })
+    </script>
+
+  </body>
+</html>

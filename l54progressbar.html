@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Progress Bar</title>
+    <style media="screen" type="text/css">
+      body{
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+      }
+      .container{
+        width:500px;
+        background-color:#f4f4f4;
+        padding:10px;
+      }
+      .progress{
+        width:100%;
+        background-color:#ddd;
+        margin: 20px 0;
+      }
+      .progress-bar{
+        width:0%;
+        height:20px;
+        background-color:green;
+        color:#fff;
+        text-align:center;
+        line-height:20px;
+      }
+      .justify-content-end{
+        display:flex;
+        justify-content:end;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h3>Downloader</h3>
+      <div class="progress">
+        <div class="progress-bar"></div>
+
+        </div>
+        <div class="justify-content-end">
+          <button type="button" name="button" class="btn">Download</button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <script type="text/javascript" src="../Project/assets/libs/jquery/jquery-min.js "></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        //alert("HI");
+        var progressbar=$(".progress-bar");
+        var swidth=0;
+        $(".btn").click(function(){
+          if(swidth===0){
+            function liquid(){
+
+                if(swidth>=100){
+                  $(".btn").attr("disabled",true);
+                  clearInterval(setintv);
+                }else{
+                  swidth++;
+                  progressbar.css({
+                    "width":`${swidth}%`
+                  });
+                  progressbar.text(`${swidth}%`);
+
+                }
+            }
+            var setintv=setInterval(liquid,20);
+          }
+        });
+
+      })
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../Project/assets/libs/jquery-ui-1.13.1/jquery-ui.min.css" type="text/css">
+    <style media="screen" type="text/css">
+      .body{
+        height:100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+      }
+      .container{
+        width: 900px;
+        height: 700px;
+        background-color: #f4ff4f4;
+        box-shadow: 20px 10px 5px #777;
+      }
+      .box{
+        width:250px;
+        height:150px;
+        background-color: steelblue;
+         display:flex;
+         justify-content:center;
+         align-items:center;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="box" id="dargeme">
+        <p>Drag Me whereever you want !!!</p>
+
+      </div>
+      <div class="box" id="dargemeOnX">
+        <p>Drag Me X !!!</p>
+
+      </div>
+      <div class="box" id="dargemeOnY">
+        <p>Drag Me Y !!!</p>
+
+      </div>
+      <div class="box" id="dargemeIncnt">
+        <p>Drag Me In CNT !!!</p>
+
+      </div>
+
+    </div>
+    <script type="text/javascript" src="../Project/assets/libs/jquery/jquery-min.js "></script>
+    <script  type="text/javascript" src="../Project/assets/libs/jquery-ui-1.13.1/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+      console.log("hello");
+      $('document').ready(function(){
+        console.log("hi");
+      //  $("#dargeme").draggable();
+      // $('#dargeme').draggable({
+      //
+      // //  cursor:"grab",
+      //   cursor:"move"
+      // });
+      $('#dargemeOnX').draggable({
+        axis:"X"
+      });
+      $('#dargemeOnY').draggable({
+        axis:"y"
+      });
+      $('#dargemeIncnt').draggable({
+        containment:".container"
+      });
+      // $('#dargeme,#dargemeIncnt').draggable({
+      //   cancel:'#dargeme'
+      // });
+
+      $('#dargeme').draggable({
+        start:function(){
+          $(this).css("background-color","violet");
+        },
+        drag:function(){
+          $(this).text("Element is moving....");
+        },
+        stop:function(){
+          $(this).text("Element is Stop...");
+        },
+        // revert:true,
+        // revertDuration:1000,
+
+        revert:function(){
+          $(this).css("background-color","orange");
+          return true;
+        },
+        revertDuration:1000,
+
+        //x,y
+      //  grid:[0,10]
+      //  grid:[100,0]
+      grid:[100,200]
+      });
+      })
+
+
+    </script>
+
+  </body>
+</html>

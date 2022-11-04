@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>HTML METHOD</title>
+  </head>
+  <body>
+    <h1>Welcome to JQuery</h1>
+    <p>This is awesome js library</p>
+    <button type="button" name="button">Click Me</button>
+    <script type="text/javascript" src="../Project/assets/libs/jquery/jquery-min.js"></script>
+    <script type="text/javascript">
+      console.log("HI");
+
+      $(document).ready(function(){
+        // console.log("HELLO");
+        //
+        // console.log($('h1').html());
+        // console.log($('p').html());
+        // console.log($('button').html());
+
+        // alert($('p').html());
+        $('button').click('click',function(){
+          console.log("I am working");
+      //    $('h1').html("Hello I am JQuery");
+            $('h1').html("<i style='color:red;'>Hello <i style='color:blue;'>JQuery</i>");
+
+        })
+      })
+
+    </script>
+
+  </body>
+</html>

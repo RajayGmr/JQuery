@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Deligate and Elegate</title>
+  </head>
+  <body>
+    <h1>Hello Thailand</h1>
+    <h2>Hello Myanmar</h2>
+    <button type="button" name="button" class="btn">Delegate</button>
+    <button type="button" name="button" class="btn1">Undelegate</button>
+    <button type="button" name="button" class="btn2">Say Hi</button>
+    <button type="button" name="button" class="btn3">Zoom</button>
+    <hr>
+    <div class="container">
+      <h3>Hello Indonesia</h3>
+      <button type="button" name="button" id="dlgbtn">Delegate Me</button>
+      <button type="button" name="button" id="undlgbtn">Undelegate Me</button>
+
+    </div>
+
+    <script type="text/javascript" src="../Project/assets/libs/jquery/jquery-min.js "></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        console.log("Heloo");
+        // $("selector").delegate("selector","event",function())
+        $("body").delegate(".btn","click",function(){
+          $("h1").after("<p>Thanks for delegate ME</p>");
+        });
+        //undelegate()
+        $(".btn1").click(function(){
+          $("body").undelegate("click");
+        });
+        //say Hi
+        $(".btn2").click(function(){
+          console.log("HI");
+        });
+        //Zoom
+         var x=0;
+        $(".btn3").click(function(e){
+          $("h2").css({fontSize: "+=10px"});
+          $(".btn3").text("Zoom "+ (x+1));
+          x++;
+          if(x===3){
+            $("body").undelegate(e);
+          };
+        });
+
+
+        $("div").delegate("#dlgbtn","click",function(){
+          $("h3").after("<p>Thanks for deleget me again</p>");
+        });
+        $("#undlgbtn").click(function(){
+          $(".container").undelegate("click");
+        })
+      })
+
+    </script>
+
+  </body>
+</html>

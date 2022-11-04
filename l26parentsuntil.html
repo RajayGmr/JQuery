@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Parentuntil Method</title>
+    <style media="screen" type="text/css">
+      body{
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+      }
+      .container{
+        width:500px;
+        background-color:#f4f4f4;
+        padding:20px;
+      }
+      .div{
+        border:1px solid #000;
+        padding: 30px;
+      }
+      ul{
+        border: 1px solid #000;
+        padding:20px;
+      }
+      ul li{
+        border: 1px solid #000;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="div" id="div1">this is div1
+        <div class="div" id="div2">this is div2
+          <div class="div" id="div3">this is div3
+            <ul>
+              <li>
+                <h1>Hellow Box 1</h>
+              </li>
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+      <button type="button" name="button" id="btn1">Closet btn</button>
+      <button type="button" name="button" id="btn2">Parunt btn</button>
+
+    </div>
+    <script type="text/javascript" src="../Project/assets/libs/jquery/jquery-min.js "></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        console.log("hi");
+
+        //closest()
+        $('#btn1').click(function(){
+           $("h1").closest("div").css({
+             "color":"blue",
+             "font-size":"30px",
+             "border":"3px dashed red"
+           });
+        });
+
+        //parentuntil()
+        // $("#btn2").click(function(){
+        //   $("h1").parentsUntil('ul').css({
+        //     "color":"blue",
+        //     "font-size":"30px",
+        //     "border":"3px dashed red"
+        //   })
+        // })
+        $("#btn2").click(function(){
+          $("h1").parentsUntil('div').css({
+            "color":"blue",
+            "font-size":"30px",
+            "border":"3px dashed red"
+          })
+        })
+        $("#btn2").click(function(){
+          $("h1").parentsUntil('#div2').css({
+            "color":"blue",
+            "font-size":"30px",
+            "border":"3px dashed red"
+          })
+        })
+      })
+    </script>
+
+  </body>
+</html>

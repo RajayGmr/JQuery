@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Reload</title>
+  </head>
+  <body>
+    <div class="">
+      <h1>Refresh or Reload a page with JQuery</h1>
+      <p id="display"></p>
+      <button type="button" name="button">Reload</button>
+
+    </div>
+    <script type="text/javascript" src="../Project/assets/libs/jquery/jquery-min.js "></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        console.log("Hi");
+        $("button").click(function(){
+          location.reload(true);
+        });
+        var getdate=new Date();
+        document.getElementById("display").textContent=getdate;
+
+      });
+    </script>
+  </body>
+</html>

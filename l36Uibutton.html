@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ui button </title>
+    <link rel="stylesheet" href="../Project/assets/libs/jquery-ui-1.13.1/jquery-ui.min.css" type="text/css">
+    <style media="screen" type="text/css">
+         .body{
+           height:100vh;
+           display:flex;
+           justify-content:center;
+           align-items:center;
+         }
+         .container{
+           width:900px;
+           background-color:#f4f4f4;
+           padding:20px;
+         }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Widget</h1>
+      <button type="button" name="button" id="btn1">This is button</button>
+      <input type="button" name="button" value="This is submit button" id="btn2">
+      <a href="#" id="btn3">This is an anchor</a>
+
+    </div><br><br>
+    <div class="btn4">
+      <input type="checkbox" name="position" id="chk1" value="1">
+      <label for="chk1">left</label>
+      <input type="checkbox" name="position" id="chk2" value="2">
+      <label for="chk2">Center</label>
+      <input type="checkbox" name="position" id="chk3" value="3">
+      <label for="chk3">Right</label>
+
+    </div>
+
+    <div class="btn5">
+      <fieldset>
+        <legend>Select your fav color</legend>
+          <input type="radio" name="favcolor" id="favwhi" value="">
+          <label for="favwhi">White</label>
+          <input type="radio" name="favcolor" id="favre" value="">
+          <label for="favre">Red</label>
+          <input type="radio" name="favcolor" id="favbl" value="">
+          <label for="favbl">Black</label>
+      </fieldset>
+    </div><br><br>
+
+    <button type="button" name="button" id="btn6">Button</button><br><br>
+    <button type="button" name="button" id="btn7">Button</button><br><br>
+    <button type="button" name="button" id="btn8">Button Disable</button>
+
+
+    <script type="text/javascript" src="../Project/assets/libs/jquery/jquery-min.js "></script>
+    <script  type="text/javascript" src="../Project/assets/libs/jquery-ui-1.13.1/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        console.log("hi");
+        $('#btn1,#btn2,#btn3').button();
+
+        $('.btn4').buttonset();
+        $('.btn5').buttonset();
+
+        $('#btn6').button({
+          icons: {
+            primary:"ui-icon-heart"
+          },
+        //  text:false
+            showLabel:false
+        });
+        $('#btn7').button({
+          icons:{
+            primary:"ui-icon-trash"
+          },
+          label:"Click Me",
+          iconPosition:"end",
+
+
+        })
+        $('#btn8').button({
+          disabled:true
+        });
+      })
+    </script>
+
+  </body>
+</html>

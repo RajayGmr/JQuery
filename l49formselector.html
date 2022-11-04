@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Form Selector</title>
+    <style media="screen" type="text/css">
+      *{
+        box-sizing:border-box;
+      }
+      body{
+        height:100vh;
+        display:flex;
+        justify-content:center;
+
+        align-items:center;
+      }
+      .container{
+        width:900px;
+        background-color:#f4f4f4;
+        padding:20px;
+      }
+      .form-group{
+        margin:10px 0;
+      }
+      .form-group label{
+        display:block;
+        margin-bottom:5px;
+      }
+      .form-control{
+        width:100%;
+      }
+      .form-check{
+        display:flex;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- <img src="../Project/assets/img/img/fav/favicon.png" width="300px" alt="logo"> -->
+      <form class="" action="" method="" enctype="multipart/form-data">
+        <!-- <div class="">
+          <input type="image"  src="../Project/assets/img/img/fav/favicon.png" width="300px">
+
+        </div> -->
+        <div class="form-group">
+          <label for="firstname">First Name</label>
+          <input type="text" name="" value="" id="firstname" class="form-control" autocomplete="off">
+
+        </div>
+        <div class="form-group">
+          <label for="lastname">Last Name</label>
+          <input type="text" name="" value="" id="lastname" class="form-control" autocomplete="off">
+
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" name="" value="" id="email" class="form-control" autocomplete="off">
+
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" name="" value="" id="password" class="form-control" autocomplete="off">
+
+        </div>
+        <div class="form-group form-check">
+          <label>Fav color</label>
+          <input type="checkbox" name="color" value="orange" id="favcolor" class="form-check-input">
+          <label for="orange">Orange</label>
+          <input type="checkbox" name="color" value="red" id="favcolor" class="form-check-input">
+          <label for="red">Red</label>
+          <input type="checkbox" name="color" value="yellow" id="favcolor" class="form-check-input">
+          <label for="yellow">Yellow</label>
+
+        </div>
+        <div class="form-group form-check">
+          <label>Gender</label>
+          <input type="radio" name="gender" value="1" id="genderm" class="form-check-input">
+          <label for="genderm">Male</label>
+          <input type="radio" name="gender" value="0" id="genderf" class="form-check-input">
+          <label for="genderf">Female</label>
+
+        </div>
+        <div class="form-group">
+          <label for="country">Country</label>
+          <select class="" name="country" id="country" class="form-control">
+            <option value="" selected disabled>Choose Country</option>
+            <option value="mm">Myanmar</option>
+            <option value="th">Thailand</option>
+            <option value="lao">Laos</option>
+
+          </select>
+
+        </div>
+        <div class="form-group">
+          <label for="nrc">NRC</label>
+          <input type="file" name="nrc" value="" id="nrc" class="form-control">
+
+        </div>
+        <div class="form-group">
+          <span title="formember">Already Register?</span><a href="#" id="loginlink" title="formember">Login Here</a>
+          <p title="forthx">Thank you for paying attention.</p>
+        </div>
+        <div class="form-group form-check">
+          <input type="checkbox" name="agree" value="" id="agree" class="form-check-input">
+          <label for="agree">I agreed all above regulation</label>
+
+        </div>
+        <input type="reset" name="" value="Reset" class="btn">
+        <button type="submit" name="button" class="btn" disabled>Submit</button>
+
+      </form>
+
+    </div>
+    <script type="text/javascript" src="../Project/assets/libs/jquery/jquery-min.js "></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        //alert("ohh")
+            //input tag(not clude button)
+        // $("input").css({
+        //   "background-color":"yellow",
+        //   "border":"1px dashed red"
+        // });
+
+            //:input tage(include button)
+        // $(":input").css({
+        //   "background-color":"yellow",
+        //   "border":"1px dashed red"
+        // });
+
+           //:text
+        // $(":text").css({
+        //   "background-color":"yellow",
+        //   "border":"1px dashed red"
+        // });
+
+          //:password
+        // $(":password").css({
+        //   "background-color":"yellow",
+        //   "border":"1px dashed red"
+        // });
+
+        //:checkbox
+        $(":checkbox").css({
+          "accent-color":"yellow"
+
+        });
+
+        //:radio
+        $(":radio").css({
+          "accent-color":"red"
+        });
+
+        //:checked for checkbox
+        // $("input[type=checkbox]").click(function(){
+        //   if($("input[name=color]").is(":checked")){
+        //     console.log("yes");
+        //   }else{
+        //     console.log("No");
+        //   }
+        //
+        // });
+
+        // $("input[type=checkbox]").click(function(){
+        //   if($(this).val()==='red'){
+        //     console.log($(this).is(":checked") ? 'My Fav color is red':'sorry i donot like red');
+        //   }else if($(this).val()==='orange'){
+        //     console.log($(this).is(":checked") ? 'My Fav color is orange':'sorry i donot like orange');
+        //   }
+        //   else if($(this).val()==='yellow'){
+        //     console.log($(this).is(":checked") ? 'My Fav color is yellow':'sorry i donot like yellow');
+        //   }
+        // });
+
+        //:check for radio
+        // $("input[type=radio]").click(function(){
+        //   if($("input[name=gender]").is(":checked")){
+        //     console.log("Gender checked");
+        //   }
+        // });
+
+        // $("input[type=radio]").click(function(){
+        //   if($(this).val()==="1"){
+        //     console.log(" Clicked Male");
+        //   }else{
+        //     console.log(" Clicked Female");
+        //   }
+        // });
+
+        //:selected
+        $("#country").change(function(){
+          //console.log("hello");
+          // var getcountry=$(this);
+          // console.log(getcountry.val());
+          // console.log(getcountry.text());
+
+          // var getcountry=$(":selected");
+         // var getcountry=$("#country :selected");
+          var getcountry=$('#country option:selected')
+          console.log(getcountry.val());
+          console.log(getcountry.text());
+
+
+        });
+
+        //;file
+        $(":file").css({
+          "background-color":"yellow",
+          "border":"1px dashed red"
+        });
+
+        //:image
+        //$(":image").css("width","100px");
+
+        //:reset
+        $(":reset").css("background-color","red");
+        $(":reset").click(function(e){
+          console.log("hello");
+          e.preventDefault();
+        });
+
+        //:submit
+        $(":submit").css("background-color","blue");
+        $(":submit").click(function(e){
+          console.log("hello");
+          e.preventDefault();
+
+
+      });
+
+      //:button
+      $(":button").click(function(e){
+        console.log("I am working");
+        e.preventDefault();
+      });
+
+      //$("[id]").css("color","red");
+      //$("[class]").css("color","steelblue")
+      //$('[title]').css("color","blue")
+
+      //$("[title='forthx']").css("color",'red');
+
+      $("span[title]").css("color",'green');
+      $("a[title]").css("color",'blue');
+      //$("p[title]").css("color",'orange');
+      $("p[title='forthx']").css("color",'pink');
+
+      //for agree
+      $("#agree").click(function(){
+        if($(this).is(":checked")){
+          $("[type='submit']").removeAttr("disabled");
+        }else{
+          $("[type='submit']").attr("disabled","disabled");
+        }
+      });
+
+    })
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Attr and Remove Attr Method</title>
+  </head>
+  <style media="screen" type="text/css">
+    body{
+      height:100vh;
+      display: flex;
+      justify-content:center;
+      align-items:center;
+    }
+    .container{
+      width:800px;
+      background:#f4f4f4;
+      padding: 20px;
+    }
+    .text-primary{
+      color:blue;
+    }
+    .text-light{
+      color:#fff;
+    }
+    .text-info{
+      background-color:lightskyblue;
+    }
+    .text-center{
+      text-align:center;
+    }
+    .underline{
+      text-decoration: line-through;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="">
+        <img src="C:\Users\Rajay\Desktop\WebP\img\profile\logo1.png" alt="logo1" width="100">
+
+        <h1 id="1">Hello Myanmar</h1>
+        <h1 id="2">Hello Thailand</h1>
+        <h1 id="3">Hello Laos</h1>
+        <h1 id="4">Hello Maylaysia</h1>
+
+      </div>
+      <button type="button" name="button" id="btn1">text-primary</button>
+      <button type="button" name="button" id="btn2">BG-Info</button>
+      <button type="button" name="button" id="btn3">textlight-bgInfo</button>
+      <button type="button" name="button" id="btn4">Multi Attr</button>
+      <button type="button" name="button" id="btn5">remove Info</button>
+
+      <button type="button" name="button" id="btn6">Text-center</button>
+      <button type="button" name="button" id="btn7">Remove textlight</button>
+      <button type="button" name="button" id="btn8">Has class</button>
+      <button type="button" name="button" id="btn9">toggle class</button>
+
+
+    </div>
+
+    <script type="text/javascript" src="../Project/assets/libs/jquery/jquery-min.js "></script>
+    <script type="text/javascript">
+      $("document").ready(function(){
+        console.log("Hi");
+      //  $(selector).attr(attribute,value);
+        $("#btn1").click(function(){
+          $("h1").attr("class","text-primary");
+        });
+        $("#btn2").click(function(){
+          $("h1").attr("class","text-info");
+        });
+        $("#btn3").click(function(){
+          $("h1").attr("class","text-primary text-info")
+        });
+        $("#btn4").click(function(){
+          $("img").attr({
+            alt:"logo2",
+            width:"150",
+            src:"../img/profile/logo2.png",
+            title:" this is logo image",
+            abc:"this is logo image"
+          });
+        });
+        //removeAttr
+        // $("#btn5").click(function(){
+        //   $("h1").removeAttr("class");
+        // });
+
+        $("#btn5").click(function(){
+          $("h1").removeAttr("id class");
+        });
+
+
+//---------------class --------------------------------------
+        //$(selector).addClass();
+        $("#btn6").click(function(){
+        //  $("h1").addClass("text-center");
+          $("h1").addClass("underline text-center");
+        });
+
+         //removeClass
+        $("#btn7").click(function(){
+          $("h1").removeClass("text-primary text-light");
+        });
+
+        //hasClass()
+        $("#btn8").click(function(){
+          alert($("h1").hasClass("text-center"));
+        });
+
+        $("#btn9").click(function(){
+          $("h1").toggleClass("text-center");
+        })
+
+      });
+
+    </script>
+
+  </body>
+</html>

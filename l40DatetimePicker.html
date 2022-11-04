@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>UI Date time Picker</title>
+    <link rel="stylesheet" href="../Project/assets/libs/jquery-ui-1.13.1/jquery-ui.min.css" type="text/css">
+    <style media="screen" type="text/css">
+      body{
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+      }
+      .container{
+        width:900px;
+        background-color:#f4f4f4;
+        padding:20px;
+      }
+      .form-group{
+        margin:10px 0;
+      }
+      .form-group label{
+        display:block;
+        font-size:20px;
+        margin-bottom:20px;
+      }
+      .justify-content-end{
+        display:flex;
+        justify-content:end;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form class="" action="" method="">
+        <div class="form-group">
+          <label for="workingday">Working Day</label>
+          <div class="" id="workingday"></div>
+
+        </div>
+        <div class="form-group">
+          <label for="multiviews">Multi Views</label>
+          <div class="" id="multiviews"></div>
+
+        </div>
+        <div class="justify-content-end">
+          <button type="button" name="button" class="btn" id="btn">Submit</button>
+
+        </div>
+      </form>
+
+    </div>
+    <script type="text/javascript" src="../Project/assets/libs/jquery/jquery-min.js "></script>
+    <script  type="text/javascript" src="../Project/assets/libs/jquery-ui-1.13.1/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        console.log("hello");
+
+        $('#workingday').datepicker();
+        $('#multiviews').datepicker({
+          numberOfMonths:3,
+          dateFormat:"yy-mm-dd"
+        });
+      });
+      $('#btn').button({
+        icons:{
+          primary:"ui-icon-refresh"
+        }
+      }).click(function(e){
+        console.log("I am on workingday");
+        var getworkingday=$('#workingday').val();
+        var getmultiviews=$('#multiviews').val();
+        console.log("This is working day=",getworkingday);
+        console.log("This is multiviews=",getmultiviews);
+        e.preventDefault();
+      })
+
+
+    </script>
+
+  </body>
+</html>

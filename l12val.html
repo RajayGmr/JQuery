@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>VAl Method</title>
+    <style media="screen" type="text/css">
+    *{
+      box-sizing: border-box;
+    }
+    body{
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container{
+      width: 600px;
+      background: #f4f4f4;
+      padding: 20px;
+      box-shadow: 10px 5px 10px rgba(0,0,0,0.3)
+    }
+    .form-group{
+      margin: 20px 0px;
+    }
+    label{
+      display: block;
+      margin-bottom: 10px;
+    }
+    .form-control{
+      width: 100%;
+      padding: 5px;
+    }
+    b{
+      color: blue;
+    }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form class="" action="index.html" method="">
+
+        <div class="form-group">
+          <label for="firstname">First Name</label>
+          <input type="text" name="firstname" value="" id="firstname" class="form-control">
+
+        </div>
+
+        <div class="form-group">
+          <label for="lastname">Last Name</label>
+          <input type="text" name="lastname" value="" id="lastname" class="form-control">
+
+        </div>
+
+        <div class="form-group">
+          <label for="favcolor">Fav Color</label>
+          <select class="form-control" id="favcolor" name="favcolor">
+            <option value="">Choose a Color</option>
+            <option value="Black">Black</option>
+            <option value="Red">Red</option>
+            <option value="White">White</option>
+          </select>
+
+        </div>
+        <div class="form-group">
+          <label for="favfruit">Fav Fruit</label>
+          <select class="form-control" id="favfruit" name="favfruit" multiple>
+            <option value="null" selectd disabled>Choose a Color</option>
+            <option value="Apple">Apple</option>
+            <option value="Coconut">Coconut</option>
+            <option value="Berry">Berry</option>
+          </select>
+
+        </div>
+        <hr>
+        <h1>Result</h1>
+        <table>
+          <tr>
+            <td id="firstnamerst"></td>
+          </tr>
+          <tr>
+            <td id="lastnamerst"></td>
+          </tr>
+          <tr>
+            <td id="favcolorrst"></td>
+          </tr>
+          <tr>
+            <td id="favfruitsrst"></td>
+          </tr>
+        </table>
+      </form>
+
+    </div>
+
+    <script type="text/javascript" src="../Project/assets/libs/jquery/jquery-min.js "></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        //console.log("hi");
+        function showresult(){
+          var getfirstname=$('#firstname').val(),
+              getlastname=$('#lastname').val(),
+              getfavcolor=$('#favcolor').val(),
+              getfavfruit=$('#favfruit').val();
+
+              console.log(getfirstname);
+              console.log(getlastname);
+              console.log(getfavcolor);
+              console.log(getfavfruit);
+
+              $("#firstnamerst").html("<b>First Name:</b>"+getfirstname);
+              $("#lastnamerst").html("<b>Last Name:</b>"+getlastname);
+              $("#favcolorrst").html("<b>Fav Color:</b>"+getfavcolor);
+              $("#favfruitsrst").html("<b>Fav Fruit:</b>"+getfavfruit);
+        }
+        //showresult();
+        // $('#firstname').change(showresult);
+        // $('#lastname').change(showresult);
+        // $('#favcolor').change(showresult);
+        // $('#favfruit').change(showresult);
+
+        $(".form-group").change(showresult);
+
+      });
+
+    </script>
+
+  </body>
+</html>

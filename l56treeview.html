@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Tree View</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style media="screen">
+      body{
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+      }
+      .container{
+        width:700px;
+      }
+      .browserpannel{
+        border: 3px solid #f4f4f4;
+        border-top-left-radius:5px;
+        border-top-right-radius:5px
+      }
+      .tabbar{
+        background-color:#f1f1f1;
+        padding:10px;
+        border-top-left-radius:5px;
+        border-top-right-radius:5px
+      }
+      .dot{
+        width:15px;
+        height:15px;
+        background-color:lightblue;
+        border-radius:50%;
+        display:inline-block;
+
+      }
+      .content{
+        padding:20px;
+
+      }
+      li{
+        list-style:none;
+      }
+      .bagcap{
+        cursor:pointer;
+      }
+      .bagcap::before{
+        content: "\25B6";
+        font-family:"Fontawesome 5 Free";
+
+        margin-right:6px;
+        display:inline-block;
+      }
+      .bagcap.godown::before{
+        transform:rotate(90deg);
+      }
+      .nested{
+        display:none;
+      }
+      .active{
+        display:block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="browserpannel">
+        <div class="tabbar">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+        <div class="content">
+          <h3>Ms.July</h3>
+          <p>Chief Technology Officer</p>
+          <ul>
+            <li><span class="bagcap godown">Summary Bio</span>
+            <ul class="nested active">
+              <li>Age : 35</li>
+              <li>Marital Status: Married</li>
+              <li>Nationality : Japanese</li>
+            </ul>
+
+              </li>
+            </ul>
+
+          <ul>
+            <li>
+              <span class="bagcap">Working Experiences</span>
+              <ul class="nested">
+                <li>
+                  <span class="bagcap">2020</span>
+                  <ul class="nested">
+                    <li>2020 - Project Director AT SUDO Technology Co.,Ltd</li>
+                    <li>2018 - Project Director AT BARBU Technology Co.,Ltd</li>
+                    <li>
+                      <span class="bagcap">2015</span>
+                      <ul class="nested">
+                        <li>2013 - Project Director AT YUKI Technology Co.,Ltd</li>
+                        <li>2013 - Project Director AT MULIE Technology Co.,Ltd</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <script type="text/javascript" src="../Project/assets/libs/jquery/jquery-min.js "></script>
+    <script type="text/javascript">
+      $('document').ready(function(){
+        //alert("hi");
+        $(".bagcap").click(function(){
+          //alert("Hi");
+          $(this).toggleClass("godown");
+          $(this).siblings().toggleClass("active");
+        })
+      })
+    </script>
+
+  </body>
+</html>

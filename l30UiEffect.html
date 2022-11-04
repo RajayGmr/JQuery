@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ui Effects & show/hide/toggle Method</title>
+    <link rel="stylesheet" href="../Project/assets/libs/jquery-ui-1.13.1/jquery-ui.min.css" type="text/css">
+    <style media="screen" type="text/css">
+      body{
+        height: 100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+
+        flex-direction:column;
+      }
+      .container{
+        width:1200px;
+        background-color:#f4f4f4;
+
+        padding: 20px;
+        display: flex;
+
+      }
+      .box{
+        width:100px;
+        height: 100px;
+
+        margin: 0 10px;
+      }
+      .box1,.box7,.box13{
+        background-color:green;
+      }
+      .box2,.box8{
+        background-color:orange;
+      }
+      .box3,.box9{
+        background-color:blue;
+      }
+      .box4,.box10{
+        background-color:violet;
+      }
+      .box5,.box11{
+        background-color:brown;
+      }
+      .box6,.box12{
+        background-color:steelblue;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box box1">1</div>
+      <div class="box box2">2</div>
+      <div class="box box3">3</div>
+      <div class="box box4">4</div>
+      <div class="box box5">5</div>
+      <div class="box box6">6</div>
+      <div class="box box7">7</div>
+      <div class="box box8">8</div>
+      <div class="box box9">9</div>
+      <div class="box box10">10</div>
+      <div class="box box11">11</div>
+      <div class="box box12">12</div>
+      <div class="box box13">13</div>
+    </div>
+
+    <div class="control">
+      <button type="button" name="button" id="shakebtn">Shake</button>
+      <button type="button" name="button" id="boncebtn">Bonce</button>
+      <button type="button" name="button" id="blindbtn">Blind</button>
+      <button type="button" name="button" id="clipbtn">Clip</button>
+      <button type="button" name="button" id="dropbtn">Drop</button>
+      <button type="button" name="button" id="explodebtn">Explode</button>
+      <button type="button" name="button" id="fadebtn">Fade</button>
+      <button type="button" name="button" id="foldbtn">Fold</button>
+      <button type="button" name="button" id="hlbtn">Hightlight</button>
+      <button type="button" name="button" id="pubtn">Puff</button>
+      <button type="button" name="button" id="pulbtn">Pulsate</button>
+      <button type="button" name="button" id="sizebtn">Size</button>
+      <button type="button" name="button" id="slidebtn">Slide</button>
+    </div>
+
+    <script type="text/javascript" src="../Project/assets/libs/jquery/jquery-min.js "></script>
+    <script  type="text/javascript" src="../Project/assets/libs/jquery-ui-1.13.1/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+       $(document).ready(function(){
+         console.log("helo");
+         $(".box1,.box2,.box3,.box4,.box5,.box6,.box7,.box8,.box9,.box10,.box11,.box12,.box13").hide();
+
+         //effect()
+         //selector.effect(type,{param},speed);
+         $('#shakebtn').click(function(){
+          // $('.box1').effect("shake",1000);
+          // $('.box1').effect("shake",2000);
+          //$('.box1').effect("shake",'slow');
+
+          // $(".box1").effect('shake',{
+          // //  direction: "left"
+          // //  direction: "right"
+          // //  direction: "up"
+          //     direction: "down",
+          //     times: 3,
+          //     distance: 200
+          // },2000);
+          // $(".box1").hide('shake',"slow");
+          // $(".box1").show("shake","slow");
+
+           $(".box1").toggle("shake","fast");
+        });
+
+        $("#boncebtn").click(function(){
+          //$('.box2').effect("bounce",2000);
+          //$('.box2').effect("bounce",'fast');
+          //$('.box2').effect("bounce","slow");
+
+          $('.box2').effect("bounce",{
+          //  direction: "left"
+          //  direction: "right"
+         //    direction: "up"
+            direction: "down",
+            distance: 200
+          },5000);
+            $(".box2").show("bounce","slow");
+          });
+
+          $('#blindbtn').click(function(){
+            // $('.box3').effect("blind",1000);
+            $('.box3').effect("blind",{
+              //direction:"down"
+              //direction:"top"
+              //direction:"right"
+              direction:"left"
+            },1000);
+              $(".box3").show("blind","fast");
+        });
+        $('#clipbtn').click(function(){
+           $('.box4').effect("clip",1000);
+             $(".box4").show("clip","fast");
+
+      });
+      $('#dropbtn').click(function(){
+//         $('.box5').effect("drop",1000);
+         $('.box5').effect("drop",{
+           //direction:"down"
+           //direction:"top"
+           //direction:"right"
+           direction:"right"
+         },1000);
+          $(".box5").show("drop","fast");
+
+    });
+    $('#explodebtn').click(function(){
+       //   $('.box6').effect("drop",1000);
+       // $('.box6').effect("explode","fast");
+       $('.box6').effect("explode","slow");
+        $(".box6").show("explode","fast");
+
+  });
+  $('#fadebtn').click(function(){
+     $('.box7').effect("fade",1000);
+     $('.box7').effect("fade","fast");
+      $(".box7").show("fade","fast");
+
+  });
+  $('#foldbtn').click(function(){
+     $('.box8').effect("fold",1000);
+     $('.box8').effect("fold","fast");
+      $(".box8").show("fold","fast");
+
+  });
+  $('#hlbtn').click(function(){
+//     $('.box9').effect("highlight",1000);
+     $('.box9').effect("highlight",{
+       color:"red"
+     },"fast");
+      $(".box9").show("highlight","fast");
+
+  });
+  $('#pubtn').click(function(){
+     $('.box10').effect("puff",1000);
+     $('.box10').effect("puff","fast");
+      $(".box10").show("puff","fast");
+
+
+  });
+  $('#pulbtn').click(function(){
+     $('.box11').effect("pulsate",1000);
+     $('.box11').effect("pulsate",{
+       times: 10
+     },2000);
+      $(".box11").show("pulsate","fast");
+
+
+  });
+  $('#sizebtn').click(function(){
+     $('.box12').effect("size",1000);
+     $('.box12').effect("size","fast");
+      $(".box12").show("size","fast");
+
+  });
+  $('#slidebtn').click(function(){
+     $('.box13').effect("slide",1000);
+     $('.box13').effect("slide","fast");
+      $(".box13").show("slide","fast");
+
+  });
+       })
+
+    </script>
+
+  </body>
+</html>

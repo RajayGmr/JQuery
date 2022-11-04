@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Parent and Children Method</title>
+    <style media="screen" type="text/css">
+      body{
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+
+        flex-direction: column;
+      }
+      .container{
+        width:500px;
+        background-color:#f4f4f4;
+        padding:20px;
+        display:flex;
+      }
+      .box{
+        width:150px;
+        height:300px;
+        margin: 0 10px;
+      }
+      .box1{
+        background-color:green;
+      }
+      .box2{
+        background-color:orange;
+      }
+      .box3{
+        background-color:blue;
+      }
+      .box4{
+        background-color:red;
+      }
+      .box5{
+        background-color:yellow;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="">
+      <h1>Parent and Children Method</h1>
+      <p>This is awesome jquery version 3.6</p>
+    </div>
+    <div class="container">
+
+        <div class="box box1">Box 1</div><hr>
+        <div class="box box2">Box 2</div><hr>
+        <div class="box box3">Box 3</div><hr>
+        <div class="box box4">Box 4</div><hr>
+        <div class="box box5">Box 5</div><hr>
+    </div>
+
+
+    <div class="">
+      <p>Hay guys!!! what's your plan after class</p>
+    </div>
+
+    <script type="text/javascript" src="../Project/assets/libs/jquery/jquery-min.js "></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+        console.log("hi");
+
+        //parent()
+        $(".box").click(function(){
+          $(this).parent().css({
+            "background":"darkblue",
+            "box-shadow":"5px 5px 10px rgba(0,0,0,0.5)"
+          });
+        });
+        //Children()
+        // $('.container').click(function(){
+        //   $(this).children().css("background-color","gold");
+        // })
+        // $('.container').click(function(){
+        //   $(this).children(".box1,.box3").css("background-color","red");
+        // });
+
+        //siblings()
+        // $(".box1").click(function(){
+        //     $(this).siblings('.box3').css("background-color","red");
+        // })
+
+        // :nth-of-type()
+        // n
+        // odd
+        // even
+        // formula
+        // $(".box1").click(function(){
+        //   $(".box:nth-of-type(1)").css("background-color","silver")
+        // })
+        // $(".box1").click(function(){
+        //   $(".box:nth-of-type(odd)").css("background-color","silver")
+        // })
+        // $(".box1").click(function(){
+        //   $(".box:nth-of-type(even)").css("background-color","silver")
+        // })
+        // $(".box1").click(function(){
+        //   $(".box:nth-of-type(3n+1)").css("background-color","silver")
+        // })
+
+        //:nth-child();
+        //n
+        //odd
+        //event
+        //formula
+
+        // $(".box1").click(function(){
+        //   $(".box:nth-child(1)").css("background-color","grey");
+        // });
+        // $(".box1").click(function(){
+        //   $(".box:nth-child(odd)").css("background-color","grey");
+        // });
+        // $(".box1").click(function(){
+        //   $(".box:nth-child(even)").css("background-color","grey");
+        // });
+        // $(".box1").click(function(){
+        //   $(".box:nth-child(2n+1)").css("background-color","grey");
+        // });
+
+        //next()
+        $(".container").click(function(){
+          $(this).next().css({
+            "background-color":"red",
+            "color":"#fff"
+          });
+        })
+        //prev
+        $(".container").click(function(){
+          $(this).prev().css({
+            "background-color":"green",
+            "color":"red",
+            "padding":"20px"
+          })
+        })
+      })
+    </script>
+
+  </body>
+</html>

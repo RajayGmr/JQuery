@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Create do Job</title>
+  </head>
+  <style media="screen" type="text/css">
+    *{
+      box-sizing:border-box;
+    }
+    body{
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+    .container{
+      width:500px;
+      background-color:#f4f4f4;
+      padding:10px;
+    }
+    .form-group{
+      margin:20px 0;
+    }
+    .form-group label{
+      display:block;
+      margin-bottom: 5px;
+    }
+    .form-control{
+      width: 100%;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <form class="" action="" method="">
+        <div class="form-group">
+          <label for="todojob">Todo Job</label>
+          <input type="text" name="todojob" value="" id="todojob" class="form-control" placeholder="Enter something">
+
+        </div>
+        <div class="form-group">
+          <label for="joblists">Job Lists</label>
+          <select class="form-control" name="joblists" id="joblists">
+            <option value="" selected disabled>choose a job</option>
+
+          </select>
+          <div class="form-group">
+            <button type="submit" name="button" disabled>Add New job</button>
+
+          </div>
+
+        </div>
+
+      </form>
+
+    </div>
+
+    <script type="text/javascript" src="../Project/assets/libs/jquery/jquery-min.js "></script>
+    <script type="text/javascript">
+      $("document").ready(function(){
+        var phfortodojob="Enter your new Job";
+        $("#todojob").val(phfortodojob).focusin(function(){
+          $(this).val("");
+        }).focusout(function(){
+          if($.trim($(this).val())!==""){
+            $('[type=submit]').removeAttr('disabled');
+          }else{
+            $('[type=submit]').attr('disabled',true);
+          }
+        });
+
+
+
+      //  alert("hi");
+      $("form").submit(function(e){
+        //console.log("i am working");
+        var gettodojob=$('#todojob');
+        //console.log(gettodojob.val());
+
+        //$.trim(gettodojob.val())!==''
+
+        if(jQuery.trim(gettodojob.val()).length>0){
+          if(window.confirm("Are you sure to add new job!")){
+            $('#joblists').append(`<option>${gettodojob.val()}</option>`);
+            gettodojob.val("");
+            gettodojob.focus();
+          }else{
+            alert("New job was cancel");
+            gettodojob.val("");
+            gettodojob.focus();
+          }
+
+        }else{
+          window.alert("Enter your new job")
+        }
+        e.preventDefault();
+      })
+      });
+    </script>
+
+  </body>
+</html>

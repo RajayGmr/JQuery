@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Wrap and Unwarap Method</title>
+    <style media="screen" type="text/css">
+      body{
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+      }
+      .container{
+        width: 500px;
+        background-color:#f4f4f4;
+        padding: 10px;
+      }
+      .box{
+        width:100px;
+        height:80px;
+        background-color:skyblue;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Box 1</h1>
+      <button type="button" name="button" id="divbtn">Div Btn</button>
+      <button type="button" name="button" id="boxbtn">Box Btn</button>
+      <button type="button" name="button" id="unboxbtn">Unbox Btn</button>
+
+    </div>
+    <script type="text/javascript" src="../Project/assets/libs/jquery/jquery-min.js "></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        console.log("Hi");
+
+        //wrap
+        $('#divbtn').click(function(){
+          $('h1').wrap("<div></div>")
+        });
+
+        $('#boxbtn').click(function(){
+          $('h1').wrap("<div class='box'></div>");
+        });
+        //Unwarap
+        $("#unboxbtn").click(function(){
+          $('h1').unwrap();
+        });
+
+
+      })
+    </script>
+
+  </body>
+</html>

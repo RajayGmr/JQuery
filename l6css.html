@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Css</title>
+  </head>
+  <body>
+    <h1>Hello Thailand</h1>
+    <h2>HELLO Thailand</h2>
+    <h3>HELLO Thailand</h3>
+    <button type="button" name="button">Change new Color</button>
+
+
+        <script type="text/javascript" src="../Project/assets/libs/jquery/jquery-min.js"></script>
+        <script type="text/javascript">
+          $(document).ready(function(){
+            console.log("Hi");
+          });
+
+          $("button").click(function(){
+          //  console.log("hehe");
+
+          $("h1").css("background-color","red");
+          $("h2").css("color", "blue");
+          $("h3").css({
+            "background":"blue",
+            "font-family":"Arial",
+            "color":"white"
+          });
+        });
+
+        </script>
+
+  </body>
+</html>

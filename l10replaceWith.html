@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Replace With</title>
+    <style media="screen" type="text/css">
+      body{
+        height: 100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+      }
+      .container{
+        width:500px;
+        background-color:grey;
+        padding:40px;
+      }
+      h2{
+        color:red;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Are you alright??</h1>
+      <p id="caption">Yeah i am alright</p>
+      <button type="button" name="button" class="btn">Click Me</button>
+    </div>
+
+    <script type="text/javascript" src="../Project/assets/libs/jquery/jquery-min.js "></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+            console.log("hi");
+            $("button").click(function(){
+              $("h1").replaceWith("<h2>Why you look like that??</h2>")
+              $("#caption").replaceWith("<i style='display:block; margin-bottom: 10px'>Last night I was on Party</i>");
+              $(".btn").replaceWith("<input type='button' name='' value='Thanks'>");
+            })
+        });
+
+
+        </script>
+
+  </body>
+</html>

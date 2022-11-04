@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>UI tooltip Method</title>
+    <link rel="stylesheet" href="../Project/assets/libs/jquery-ui-1.13.1/jquery-ui.min.css" type="text/css">
+    <style media="screen" type="text/css">
+       body{
+         height: 100vh;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+       }
+       .container{
+         width: 900px;
+         background-color: #f4f4f4;
+         padding: 20px;
+       }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h3>how to use jquery Tooltip!</h3>
+      <p><a href="#" id="ttone" title="This is Tooltip of jquery UI">It is used</a> in conjuction with a cursor,when a user hover the pointer over an
+      item without clicking</p>
+
+      <form class="" action="" method="">
+        <div class="form-group">
+          <label for="dob">Date of Birth</label>
+          <input type="text" name="dob" value="" id="dob" class="form-control" title="Your age must be 18" autocomplete="off" readonly>
+
+        </div>
+
+      </form>
+
+    </div>
+    <script type="text/javascript" src="../Project/assets/libs/jquery/jquery-min.js "></script>
+    <script  type="text/javascript" src="../Project/assets/libs/jquery-ui-1.13.1/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        // console.log("hello");
+        // $('#ttone').tooltip({
+        //   // show:3000,
+        //   // hide:5000,
+        //   // show:"explode",
+        //   // hide:'shake',
+        //
+        //   // hide:{
+        //   //   effect:"shake",
+        //   //   duration:2000
+        //   // },
+        //   // show:{
+        //   //   effect:"explode",
+        //   //   duration:2000
+        //   // },
+        //   track:true,
+        // //  content:"This is JQuery UI.Thanks for using our lab"
+        // content:function(){
+        //   //return `<img src='../img/cover/dog.jpg' wide='150px'>`
+        //   return `<img src='../img/cover/dog.jpg' width='150px'><h5>helloworld</h5><small>console.log();</small>`
+        // }
+        // });
+
+        // $('#dob').tooltip();
+        // $('#dob').datepicker();
+
+        $(document).tooltip();
+      })
+
+    </script>
+
+  </body>
+</html>

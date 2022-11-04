@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Click and Bind</title>
+  </head>
+  <body>
+    <h1>Welcome to JQuery</h1>
+    <h3>this is awesome js library</h3>
+    <button type="button" name="button" id="clickme" class="clickme">Click ME</button>
+    <button type="button" name="button" id="singleclick" class="singleclick">Single Click ME</button>
+    <button type="button" name="button" id="dblclick" class="dblclick">Double Click ME</button>
+    <button type="button" name="button" id="mouseover" class="mouseover">Mouse ME</button>
+    <button type="button" name="button" id="mouseleave" class="mouseleave">Mouse Leave</button>
+
+    <script type="text/javascript" src="../Project/assets/libs/jquery/jquery-min.js "></script>
+    <script type="text/javascript">
+      console.log("Hey");
+
+      $(document).ready(function(){
+        console.log("Hi");
+
+        $("#clickme").click('click',function(){
+          console.log("i am working ");
+        });
+        $("#singleclick").bind('click',function(){
+          console.log("I am working with Bind ");
+        });
+        $("#dblclick").bind('dblclick',function(){
+          console.log("I am workiing with double click " + this.nodeName);
+        });
+        $("#mouseover").bind('mouseover',function(){
+          console.log("i am mouseover");
+        });
+        $("#mouseleave").bind('mouseleave',function(){
+          console.log("i am mouseleave");
+        })
+
+
+      });
+
+    </script>
+
+  </body>
+</html>
